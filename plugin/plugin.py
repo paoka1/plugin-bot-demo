@@ -18,6 +18,11 @@ class Plugins:
         self.plugins = []
 
     def register(self, plugin: Plugin):
+        """
+        注册插件
+        :param plugin:
+        :return:
+        """
         self.plugins.append(plugin)
 
     def is_match(self, msg, match):
@@ -30,6 +35,10 @@ class Plugins:
                     yield plugin
 
     def sort(self):
+        """
+        将插件按优先级排序
+        :return:
+        """
         self.plugins.sort(key=lambda x: x.priority)
 
     def get_num(self):
@@ -92,6 +101,13 @@ plugins = [kw_plugins, fm_plugins, sw_plugins, ew_plugins]
 
 
 def on_keyword(match: list, priority: int, block=False):
+    """
+    匹配关键字
+    :param match:
+    :param priority:
+    :param block:
+    :return:
+    """
     def decorator(func):
         kw_plugins.register(Plugin(func, match, priority, block))
         return func
@@ -99,6 +115,13 @@ def on_keyword(match: list, priority: int, block=False):
 
 
 def full_match(match: list, priority: int, block=False):
+    """
+    全匹配时触发
+    :param match:
+    :param priority:
+    :param block:
+    :return:
+    """
     def decorator(func):
         fm_plugins.register(Plugin(func, match, priority, block))
         return func
@@ -106,6 +129,13 @@ def full_match(match: list, priority: int, block=False):
 
 
 def start_with(match: list, priority: int, block=False):
+    """
+    以特定短语开头时触发
+    :param match:
+    :param priority:
+    :param block:
+    :return:
+    """
     def decorator(func):
         sw_plugins.register(Plugin(func, match, priority, block))
         return func
@@ -113,6 +143,13 @@ def start_with(match: list, priority: int, block=False):
 
 
 def end_with(match: list, priority: int, block=False):
+    """
+    以特定短语结尾时触发
+    :param match:
+    :param priority:
+    :param block:
+    :return:
+    """
     def decorator(func):
         ew_plugins.register(Plugin(func, match, priority, block))
         return func

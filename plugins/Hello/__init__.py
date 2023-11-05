@@ -3,6 +3,7 @@ from plugin.plugin import on_keyword
 from plugin.plugin import full_match
 
 
+# on_keyword 关键词触发
 @on_keyword(match=["hello"], priority=1, block=True)
 def helloworld(bot: Bot, _):
     bot.send_msg("hello")
@@ -14,6 +15,7 @@ def goodbye(bot: Bot, _):
     exit()
 
 
+# full_match 全匹配时触发
 @full_match(match=["who are you"], priority=1, block=True)
 def whoami(bot: Bot, _):
     bot.send_msg("I am " + bot.name)
