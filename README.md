@@ -1,18 +1,18 @@
 # plugin-bot-demo
-A simple plugin chatbot demo for learning Python
+一个用于学习 Python 的插件式聊天框架演示程序
 
-### Usage
+### 用法
 
-1. git clone this repository
-2. Running `bot.py` using Python
+1. 克隆本仓库
+2. 使用 Python 运行 `bot.py`
 
-### Create your plugin
+### 编写插件
 
-1. Create your plugin folder in the plugins directory
-2. Writing plugin code in `__init__.py`
+1. 在 plugins 目录创建你的插件文件夹
+2. 在该文件夹的 `__init__.py` 中编写你的插件代码
 
-There are examples of plugins that I have written in the plugins folder
+我预先在插件文件夹中写了一些插件的例子
 
-### How it works
+### 原理
 
-You can refer to the article on my blog: [Python-装饰器](https://paoka1.top/2023/11/05/Python-%E8%A3%85%E9%A5%B0%E5%99%A8/)
+参考我博客上的文章：[Python-装饰器](https://paoka1.top/2023/11/05/Python-%E8%A3%85%E9%A5%B0%E5%99%A8/)
